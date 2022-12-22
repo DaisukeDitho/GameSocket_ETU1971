@@ -14,6 +14,7 @@ import java.util.Vector;
 public class Serveur {
 	Vector<Socket> clients = new Vector<Socket>();
 	Vector<Avatar> avatars = new Vector<Avatar>();
+	
 	int nombreClients = 0;
 	public static void main(String[] args) {
 		Serveur server = new Serveur();

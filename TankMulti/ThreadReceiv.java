@@ -86,6 +86,12 @@ public class ThreadReceiv implements Runnable
                             System.out.println("BABE : "+getmap().getavatars().get(o).getID());
                         }
                     }
+                    else if(msg.contains("grandeur")==true)
+                    {
+                        String[]haha=msg.split("`");
+                        getmap().getavatars().get(getmap().getavatars().size()-1).setgrandeurX(Integer.parseInt(haha[2]));
+                        getmap().getavatars().get(getmap().getavatars().size()-1).setgrandeurY(Integer.parseInt(haha[3]));
+                    }
                     msg = getin().readLine();
                 }
                 

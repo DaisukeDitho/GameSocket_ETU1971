@@ -1,5 +1,7 @@
 package tools;
 
+import affichage.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,8 +10,8 @@ public class Avatar extends JPanel
     int ID=666;
     int x=220;
     int y=220;
-    int deplaceX=0;
-    int deplaceY=0;
+    int grandeurX=10;
+    int grandeurY=10;
 
     public void setID(int id)
     {
@@ -38,21 +40,35 @@ public class Avatar extends JPanel
     {
         return this.y;
     }    
-    public void setdeplaceX(int deplaceX)
+    public void setgrandeurX(int grandeurX)throws Exception
     {
-        this.deplaceX=deplaceX;
+        if(grandeurX<=300)
+        {
+            this.grandeurX=grandeurX;
+        }
+        else
+        {
+            throw new Exception("MAHARESY");
+        }
     }
-    public int getdeplaceX()
+    public int getgrandeurX()
     {
-        return this.deplaceX;
+        return this.grandeurX;
     }
-    public void setdeplaceY(int deplaceY)
+    public void setgrandeurY(int grandeurY)throws Exception
     {
-        this.deplaceY=deplaceY;
+        if(grandeurY<=300)
+        {
+            this.grandeurY=grandeurY;   
+        }
+        else
+        {
+            throw new Exception("MAHARESY");
+        }
     }
-    public int getdeplaceY()
+    public int getgrandeurY()
     {
-        return this.deplaceY;
+        return this.grandeurY;
     }
 
     public Avatar(int ID)
@@ -67,6 +83,11 @@ public class Avatar extends JPanel
     public void paint(Graphics g)
     {
         g.setColor(new Color(0,0,0));
-        g.fillRect(getX(),getY(),10,10); 
+        g.fillRect(getX(),getY(),getgrandeurX(),getgrandeurY()); 
+    }
+
+    public void maty(int ID,Map mapy)
+    {
+        mapy.getavatars().get(ID).setVisible(false);
     }
 }

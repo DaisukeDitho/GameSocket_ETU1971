@@ -66,7 +66,7 @@ public class Map extends JPanel
 
     public void paint(Graphics g)
     {
-        g.setColor(new Color(255,255,255));
+        g.setColor(new Color(146,175,217));
         g.fillRect(0,0,450,450);
         for(int i=0;i<avatars.size();i++)
         {

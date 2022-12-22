@@ -5,6 +5,7 @@ import client.*;
 
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import javax.swing.*;
 
 public class EcouteurMouvement implements KeyListener
 {
@@ -78,6 +79,20 @@ public class EcouteurMouvement implements KeyListener
                 System.out.println(getjojo().getID());
                 getavatar().setY(getavatar().getY()+5);
                 getjojo().setmessageToSend("deplacement`"+getavatar().getID()+"`"+getavatar().getX()+"`"+getavatar().getY());
+            }
+            if(e.getKeyCode()==KeyEvent.VK_P)
+            {
+                try
+                {
+                    System.out.println("++");
+                    getavatar().setgrandeurX((int)(getavatar().getgrandeurX()*2));
+                    getavatar().setgrandeurY((int)(getavatar().getgrandeurY()*2));
+                    getjojo().setmessageToSend("grandeur`"+getavatar().getID()+"`"+getavatar().getgrandeurX()+"`"+getavatar().getgrandeurY());
+                }
+                catch(Exception ess)
+                {
+                    JOptionPane.showMessageDialog(getjojo().getmap(),ess.getMessage());
+                }
             }
         }
         catch(Exception ej)
